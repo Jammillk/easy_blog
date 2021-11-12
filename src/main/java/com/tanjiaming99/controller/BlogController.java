@@ -1,6 +1,7 @@
 package com.tanjiaming99.controller;
 
 
+import com.tanjiaming99.common.ajax.AjaxRes;
 import com.tanjiaming99.model.entity.Blog;
 import com.tanjiaming99.service.IBlogService;
 import io.swagger.annotations.Api;
@@ -8,11 +9,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -37,9 +34,11 @@ public class BlogController {
 
     @GetMapping("/{blogId}")
     @ApiOperation(value = "获取博客文章", notes = "根据id获取博客文章")
-    public Blog getBlog(@PathVariable("blogId") Long blogId) {
-        return blogService.getById(blogId);
+    public AjaxRes<Blog> getBlog(@PathVariable("blogId") Long blogId) {
+        return AjaxRes.success(blogService.getById(blogId));
     }
+
+
 
 
 }
