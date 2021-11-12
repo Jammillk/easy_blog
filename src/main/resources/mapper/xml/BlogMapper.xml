@@ -4,14 +4,11 @@
 
 
     <insert id="createBlog">
-        insert into tb_blog (blog_id, blog_title,
-                             blog_cover_image, blog_category_id, blog_category_name,
-                             blog_tags, blog_status,
-                             enable_comment, is_deleted, blog_content)
-        values (#{dto.blogId}, #{dto.blogTitle},
+        insert into tb_blog
+        values (  #{dto.blogTitle},
                 #{dto.blogCoverImage}, #{dto.blogCategoryId},
                 #{dto.blogCategoryName},
                 #{dto.blogTags}, #{dto.blogStatus},
-                #{dto.enableComment}, #{dto.isDeleted}, #{dto.blogContent})
+                #{dto.enableComment}, #{dto.blogContent})
     </insert>
 </mapper>

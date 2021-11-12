@@ -41,8 +41,8 @@ public class BlogController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "新增博客文章", notes = "新增一篇博客")
-    public AjaxRes<?> create(@RequestBody BlogDTO dto){
-        return blogService.createBlog(dto) ? AjaxRes.success("新建成功") : AjaxRes.fail("新建失败");
+    public AjaxRes<?> create(@RequestBody Blog blog){
+        return blogService.createBlog(blog) ? AjaxRes.success("新建成功") : AjaxRes.fail("新建失败");
     }
 
 

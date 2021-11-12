@@ -24,7 +24,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
     private BlogMapper blogMapper;
 
     @Override
-    public Boolean createBlog(BlogDTO dto) {
-        return blogMapper.createBlog(dto) ;
+    public Boolean createBlog(Blog blog) {
+        return blogMapper.insert(blog) > 0 ? Boolean.TRUE : Boolean.FALSE ;
     }
 }

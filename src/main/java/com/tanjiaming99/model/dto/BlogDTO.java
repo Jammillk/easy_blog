@@ -50,4 +50,5 @@ public class BlogDTO implements Serializable {
     @ApiModelProperty("0-允许评论 1-不允许评论")
     private Integer enableComment;
 
+
 }
