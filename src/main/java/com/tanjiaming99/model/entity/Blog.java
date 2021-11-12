@@ -1,8 +1,7 @@
 package com.tanjiaming99.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
@@ -57,12 +56,15 @@ public class Blog implements Serializable {
     private Integer enableComment;
 
     @ApiModelProperty("是否删除 0=否 1=是")
+    @TableLogic
     private Integer isDeleted;
 
     @ApiModelProperty("添加时间")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @ApiModelProperty("修改时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
     public Long getBlogId() {

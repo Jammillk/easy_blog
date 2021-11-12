@@ -2,6 +2,7 @@ package com.tanjiaming99.controller;
 
 
 import com.tanjiaming99.common.ajax.AjaxRes;
+import com.tanjiaming99.model.dto.BlogDTO;
 import com.tanjiaming99.model.entity.Blog;
 import com.tanjiaming99.service.IBlogService;
 import io.swagger.annotations.Api;
@@ -37,6 +38,13 @@ public class BlogController {
     public AjaxRes<Blog> getBlog(@PathVariable("blogId") Long blogId) {
         return AjaxRes.success(blogService.getById(blogId));
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ApiOperation(value = "新增博客文章", notes = "新增一篇博客")
+    public AjaxRes<?> create(@RequestBody BlogDTO dto){
+        return blogService.createBlog(dto) ? AjaxRes.success("新建成功") : AjaxRes.fail("新建失败");
+    }
+
 
 
 

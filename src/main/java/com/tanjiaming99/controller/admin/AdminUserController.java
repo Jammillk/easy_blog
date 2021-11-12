@@ -36,4 +36,5 @@ public class AdminUserController {
         return adminUserService.login(dto) ? AjaxRes.success("登录成功") : AjaxRes.fail("登录失败");
     }
 
+
 }

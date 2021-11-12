@@ -1,9 +1,11 @@
 package com.tanjiaming99.service.impl;
 
+import com.tanjiaming99.model.dto.BlogDTO;
 import com.tanjiaming99.model.entity.Blog;
 import com.tanjiaming99.mapper.BlogMapper;
 import com.tanjiaming99.service.IBlogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +19,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IBlogService {
 
+
+    @Autowired
+    private BlogMapper blogMapper;
+
+    @Override
+    public Boolean createBlog(BlogDTO dto) {
+        return blogMapper.createBlog(dto) ;
+    }
 }

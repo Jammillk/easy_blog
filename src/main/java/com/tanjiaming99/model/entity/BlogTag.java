@@ -2,6 +2,7 @@ package com.tanjiaming99.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -30,6 +31,7 @@ public class BlogTag implements Serializable {
     private String tagName;
 
     @ApiModelProperty("是否删除 0=否 1=是")
+    @TableLogic
     private Integer isDeleted;
 
     @ApiModelProperty("创建时间")

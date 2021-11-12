@@ -1,5 +1,6 @@
 package com.tanjiaming99.service;
 
+import com.tanjiaming99.model.dto.BlogDTO;
 import com.tanjiaming99.model.entity.Blog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogService extends IService<Blog> {
 
+    Boolean createBlog(BlogDTO dto);
 }

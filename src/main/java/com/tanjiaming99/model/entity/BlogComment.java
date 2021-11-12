@@ -2,6 +2,7 @@ package com.tanjiaming99.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -57,6 +58,7 @@ public class BlogComment implements Serializable {
     private Integer commentStatus;
 
     @ApiModelProperty("是否删除 0-未删除 1-已删除")
+    @TableLogic
     private Integer isDeleted;
 
     public Long getCommentId() {
