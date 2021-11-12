@@ -15,6 +15,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
+
+
     // 初始化创建Swagger Api
     @Bean
     public Docket createRestApi() {
@@ -32,9 +34,9 @@ public class SwaggerConfig {
     // 添加摘要信息
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("EasyBlog开发安全的REST服务")
+                .title("EasyBlog个人博客的REST服务")
                 .description("Swagger文档")
-                .contact(new Contact("name", "url", "email"))
+                .contact(new Contact("EasyBlog博客", "url", "email"))
                 .version("1.0.0")
                 .build();
     }

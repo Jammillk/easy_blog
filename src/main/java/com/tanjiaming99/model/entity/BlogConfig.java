@@ -1,4 +1,4 @@
-package com.tanjiaming99.entity;
+package com.tanjiaming99.model.entity;
 
 import java.util.Date;
 

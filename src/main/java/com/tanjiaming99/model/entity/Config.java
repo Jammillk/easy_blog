@@ -1,4 +1,4 @@
-package com.tanjiaming99.entity;
+package com.tanjiaming99.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author tanjiaming99

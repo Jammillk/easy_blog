@@ -1,6 +1,6 @@
 package com.tanjiaming99.service.impl;
 
-import com.tanjiaming99.entity.Link;
+import com.tanjiaming99.model.entity.Link;
 import com.tanjiaming99.mapper.LinkMapper;
 import com.tanjiaming99.service.ILinkService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,6 +1,6 @@
 package com.tanjiaming99.mapper;
 
-import com.tanjiaming99.entity.BlogTagRelation;
+import com.tanjiaming99.model.entity.BlogTagRelation;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

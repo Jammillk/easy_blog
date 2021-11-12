@@ -1,6 +1,6 @@
 package com.tanjiaming99.service.impl;
 
-import com.tanjiaming99.entity.BlogCategory;
+import com.tanjiaming99.model.entity.BlogCategory;
 import com.tanjiaming99.mapper.BlogCategoryMapper;
 import com.tanjiaming99.service.IBlogCategoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

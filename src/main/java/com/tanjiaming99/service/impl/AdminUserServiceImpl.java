@@ -1,6 +1,6 @@
 package com.tanjiaming99.service.impl;
 
-import com.tanjiaming99.entity.AdminUser;
+import com.tanjiaming99.model.entity.AdminUser;
 import com.tanjiaming99.mapper.AdminUserMapper;
 import com.tanjiaming99.service.IAdminUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

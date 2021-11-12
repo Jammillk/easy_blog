@@ -1,6 +1,6 @@
 package com.tanjiaming99.service;
 
-import com.tanjiaming99.entity.Config;
+import com.tanjiaming99.model.entity.Config;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

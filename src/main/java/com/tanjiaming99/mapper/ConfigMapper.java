@@ -1,6 +1,6 @@
 package com.tanjiaming99.mapper;
 
-import com.tanjiaming99.entity.Config;
+import com.tanjiaming99.model.entity.Config;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

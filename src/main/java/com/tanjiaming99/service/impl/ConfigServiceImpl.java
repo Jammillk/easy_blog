@@ -1,6 +1,6 @@
 package com.tanjiaming99.service.impl;
 
-import com.tanjiaming99.entity.Config;
+import com.tanjiaming99.model.entity.Config;
 import com.tanjiaming99.mapper.ConfigMapper;
 import com.tanjiaming99.service.IConfigService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
