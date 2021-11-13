@@ -26,6 +26,9 @@ import java.time.LocalDateTime;
 public class BlogDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty("博客表主键id")
+    private Long blogId;
+
     @ApiModelProperty("博客标题")
     private String blogTitle;
 

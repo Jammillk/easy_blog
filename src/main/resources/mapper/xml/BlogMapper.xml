@@ -11,4 +11,23 @@
                 #{dto.blogTags}, #{dto.blogStatus},
                 #{dto.enableComment}, #{dto.blogContent})
     </insert>
+    <!--查询的内容可以根据以后需要再作确认，现在先写着*-->
+    <!--分页查询的条件同-->
+    <select id="queryPage" resultType="com.tanjiaming99.model.vo.BlogVO">
+        select * from tb_blog
+        <if test="param != null">
+            <where>
+                <if test="param.blogContent != null and param.BlogContent != ''">
+                    blog_content like concat('%', #{param.blogContent}, '%')
+                    or blog_title like concat('%', #{param.blogContent}, '%')
+                </if>
+                <if test="param.blogCategoryName != null and param.blogCategoryName != ''">
+                    and blog_category_name = #{param.blogCategoryName}
+                </if>
+                <if test="param.blogTags != null and param.blogTags != ''">
+                    and blog_tags = #{param.blogTags}
+                </if>
+            </where>
+        </if>
+    </select>
 </mapper>

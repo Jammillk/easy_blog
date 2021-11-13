@@ -1,8 +1,11 @@
 package com.tanjiaming99.service.impl;
 
+import com.tanjiaming99.common.model.Page;
 import com.tanjiaming99.model.dto.BlogDTO;
 import com.tanjiaming99.model.entity.Blog;
 import com.tanjiaming99.mapper.BlogMapper;
+import com.tanjiaming99.model.param.PageBlogParam;
+import com.tanjiaming99.model.vo.BlogVO;
 import com.tanjiaming99.service.IBlogService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +29,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
     @Override
     public Boolean createBlog(Blog blog) {
         return blogMapper.insert(blog) > 0 ? Boolean.TRUE : Boolean.FALSE ;
+    }
+
+    @Override
+    public Page<BlogVO> queryPage(Page<BlogVO> page, PageBlogParam param) {
+        return blogMapper.queryPage(page, param);
     }
 }
