@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
+import javax.validation.Valid;
+
 /**
  * @Author tanjiaming99.com
  * @Date 2021/11/13 12:54
@@ -21,5 +23,6 @@ public class PageBlogForm<T> {
     private Page<T> page;
 
     @ApiModelProperty(value = "博客文章分页查询参数")
+    @Valid
     private PageBlogParam param;
 }

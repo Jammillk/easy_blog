@@ -16,6 +16,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * <p>
  * 前端控制器
@@ -45,27 +47,27 @@ public class BlogController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ApiOperation(value = "新增博客文章", notes = "新增一篇博客")
-    public AjaxRes<?> create(@RequestBody Blog blog) {
+    public AjaxRes<?> create(@RequestBody @Valid Blog blog) {
         return blogService.createBlog(blog) ? AjaxRes.success("新建成功") : AjaxRes.fail("新建失败");
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @ApiOperation(value = "修改博客文章", notes = "修改博客文章")
-    public AjaxRes<?> update(@RequestBody Blog blog) {
+    public AjaxRes<?> update(@RequestBody  Blog blog) {
         return blogService.updateById(blog) ? AjaxRes.success("修改成功") : AjaxRes.fail("修改失败");
     }
 
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ApiOperation(value = "删除博客文章", notes = "删除博客文章")
-    public AjaxRes<?> update(@RequestParam Long id) {
-        return blogService.removeById(id) ? AjaxRes.success("删除成功") : AjaxRes.fail("删除失败");
+    public AjaxRes<?> update(@RequestBody BlogDTO dto) {
+        return blogService.removeById(dto.getBlogId()) ? AjaxRes.success("删除成功") : AjaxRes.fail("删除失败");
     }
 
 
     @PostMapping("/page")
     @ApiOperation(value = "分页查询博客文章", notes = "分页查询博客文章")
-    public AjaxRes<Page<BlogVO>> page(@RequestBody PageBlogForm<BlogVO> form) {
+    public AjaxRes<Page<BlogVO>> page(@RequestBody @Valid PageBlogForm<BlogVO> form) {
         return AjaxRes.success(blogService.queryPage(form.getPage(), form.getParam()));
     }
 

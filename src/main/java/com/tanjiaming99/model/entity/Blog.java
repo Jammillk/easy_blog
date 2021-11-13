@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * <p>
  *
@@ -26,6 +28,7 @@ public class Blog implements Serializable {
     private Long blogId;
 
     @ApiModelProperty("博客标题")
+    @NotBlank(message = "博客标题不能为空")
     private String blogTitle;
 
     @ApiModelProperty("博客自定义路径url")
@@ -35,6 +38,7 @@ public class Blog implements Serializable {
     private String blogCoverImage;
 
     @ApiModelProperty("博客内容")
+    @NotBlank(message = "博客内容不能为空")
     private String blogContent;
 
     @ApiModelProperty("博客分类id")
