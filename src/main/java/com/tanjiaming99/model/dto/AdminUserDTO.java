@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -28,10 +29,16 @@ public class AdminUserDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("管理员登陆名称")
+    @NotBlank(message = "登陆名不能为空")
     private String loginUserName;
 
     @ApiModelProperty("管理员登陆密码")
+    @NotBlank(message = "登陆密码不能为空")
     private String loginPassword;
+
+    @ApiModelProperty("登陆验证码")
+    @NotBlank(message = "验证码不能为空")
+    private String verifyCode;
 
 
 }

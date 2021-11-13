@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 /**
  * <p>
  *  前端控制器
@@ -32,8 +35,8 @@ public class AdminUserController {
 
     @PostMapping("/login")
     @ApiOperation(value = "用户登录接口")
-    public AjaxRes<?> login(@RequestBody AdminUserDTO dto){
-        return adminUserService.login(dto) ? AjaxRes.success("登录成功") : AjaxRes.fail("登录失败");
+    public AjaxRes<?> login(@RequestBody @Valid AdminUserDTO dto, HttpServletRequest request){
+        return adminUserService.login(dto, request) ? AjaxRes.success("登录成功") : AjaxRes.fail("登录失败");
     }
 
 

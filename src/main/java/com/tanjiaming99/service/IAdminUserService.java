@@ -4,6 +4,8 @@ import com.tanjiaming99.model.dto.AdminUserDTO;
 import com.tanjiaming99.model.entity.AdminUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * <p>
  *  服务类
@@ -14,6 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAdminUserService extends IService<AdminUser> {
 
-    Boolean login(AdminUserDTO dto);
+    Boolean login(AdminUserDTO dto, HttpServletRequest request);
 
 }
