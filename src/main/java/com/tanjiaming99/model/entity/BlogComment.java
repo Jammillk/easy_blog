@@ -50,8 +50,8 @@ public class BlogComment implements Serializable {
     @ApiModelProperty("评论提交时间")
     private LocalDateTime commentCreateTime;
 
-    @ApiModelProperty("评论时的ip地址")
-    private String commentatorIp;
+//    @ApiModelProperty("评论时的ip地址")
+//    private String commentatorIp;
 
     @ApiModelProperty("回复内容")
     private String replyBody;
@@ -115,13 +115,13 @@ public class BlogComment implements Serializable {
     public void setCommentCreateTime(LocalDateTime commentCreateTime) {
         this.commentCreateTime = commentCreateTime;
     }
-    public String getCommentatorIp() {
-        return commentatorIp;
-    }
-
-    public void setCommentatorIp(String commentatorIp) {
-        this.commentatorIp = commentatorIp;
-    }
+//    public String getCommentatorIp() {
+//        return commentatorIp;
+//    }
+//
+//    public void setCommentatorIp(String commentatorIp) {
+//        this.commentatorIp = commentatorIp;
+//    }
     public String getReplyBody() {
         return replyBody;
     }
@@ -161,7 +161,7 @@ public class BlogComment implements Serializable {
             ", websiteUrl=" + websiteUrl +
             ", commentBody=" + commentBody +
             ", commentCreateTime=" + commentCreateTime +
-            ", commentatorIp=" + commentatorIp +
+//            ", commentatorIp=" + commentatorIp +
             ", replyBody=" + replyBody +
             ", replyCreateTime=" + replyCreateTime +
             ", commentStatus=" + commentStatus +
