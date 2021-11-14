@@ -42,9 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
+                // 静态资源
                 .antMatchers(
-                        "/admin/login",
-                        "/admin/logout",
                         "/css/**",
                         "/js/**",
                         "/index.html",
@@ -53,9 +52,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html",
                         "/webjars/**",
                         "/swagger-resources/**",
-                        "/v2/api-docs/**",
-                        "/kaptcha"
-                );
+                        "/v2/api-docs/**"
+                )
+                // 前端展示页面的路径
+                .antMatchers(
+                "/admin/login",
+                "/admin/logout",
+                "/kaptcha",
+                "/blog/page"
+        );
     }
 
     @Override
