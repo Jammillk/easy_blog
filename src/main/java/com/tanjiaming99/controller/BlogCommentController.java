@@ -3,6 +3,7 @@ package com.tanjiaming99.controller;
 
 import com.tanjiaming99.common.ajax.AjaxRes;
 import com.tanjiaming99.model.dto.BlogCommentDTO;
+import com.tanjiaming99.model.dto.BlogReplyDTO;
 import com.tanjiaming99.service.IBlogCommentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +34,12 @@ public class BlogCommentController {
     @RequestMapping(method = RequestMethod.POST)
     public AjaxRes<?> create(@RequestBody @Valid BlogCommentDTO dto){
         return blogCommentService.createComment(dto) ? AjaxRes.success("新增评论成功") : AjaxRes.fail("新增评论失败");
+    }
+
+    @ApiOperation(value = "回复一条评论")
+    @PostMapping("/reply")
+    public AjaxRes<?> reply(@RequestBody @Valid BlogReplyDTO dto){
+        return blogCommentService.replyComment(dto) ? AjaxRes.success("回复评论成功") : AjaxRes.fail("回复评论失败");
     }
 
 

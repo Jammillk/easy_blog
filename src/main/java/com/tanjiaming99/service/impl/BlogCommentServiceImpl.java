@@ -1,6 +1,8 @@
 package com.tanjiaming99.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.tanjiaming99.model.dto.BlogCommentDTO;
+import com.tanjiaming99.model.dto.BlogReplyDTO;
 import com.tanjiaming99.model.entity.BlogComment;
 import com.tanjiaming99.mapper.BlogCommentMapper;
 import com.tanjiaming99.service.IBlogCommentService;
@@ -8,6 +10,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -32,5 +36,13 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
         BlogComment blogComment = new BlogComment();
         BeanUtils.copyProperties(dto, blogComment);
         return blogCommentMapper.insert(blogComment) > 0;
+    }
+
+    @Override
+    public Boolean replyComment(BlogReplyDTO dto) {
+        return blogCommentMapper.update(null, new UpdateWrapper<BlogComment>()
+                .set("reply_body", dto.getReplyBody())
+                .set("reply_create_time", LocalDateTime.now().withNano(0))
+                .eq("comment_id", dto.getCommentId())) > 0;
     }
 }
