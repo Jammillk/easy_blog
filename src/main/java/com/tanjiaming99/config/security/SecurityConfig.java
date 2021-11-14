@@ -53,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-ui.html",
                         "/webjars/**",
                         "/swagger-resources/**",
-                        "/v2/api-docs/**"
+                        "/v2/api-docs/**",
+                        "/kaptcha"
                 );
     }
 
@@ -68,8 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 允许登录访问
-                .antMatchers("/admin/login", "/admin/logout")
-                .permitAll()
+//                .antMatchers("/admin/login", "/admin/logout")
+//                .permitAll()
                 // 其它的，都要拦截
                 .anyRequest()
                 .authenticated()
