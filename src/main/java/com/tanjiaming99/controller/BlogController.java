@@ -60,7 +60,7 @@ public class BlogController {
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ApiOperation(value = "删除博客文章", notes = "删除博客文章")
-    public AjaxRes<?> update(@RequestBody BlogDTO dto) {
+    public AjaxRes<?> remove(@RequestBody BlogDTO dto) {
         return blogService.removeById(dto.getBlogId()) ? AjaxRes.success("删除成功") : AjaxRes.fail("删除失败");
     }
 

@@ -47,5 +47,13 @@ public class BlogCommentController {
         return blogCommentService.censorComment(dto) ? AjaxRes.success("修改评论状态成功") : AjaxRes.fail("修改评论状态失败");
     }
 
+    @ApiOperation(value = "删除一条评论", notes = "只需传入commentId即可")
+    @RequestMapping(method = RequestMethod.DELETE)
+    public AjaxRes<?> remove(@RequestBody BlogCommentDTO dto){
+        return blogCommentService.removeById(dto.getCommentId()) ? AjaxRes.success("删除评论成功") : AjaxRes.fail("删除评论失败");
+    }
+
+
+
 
 }

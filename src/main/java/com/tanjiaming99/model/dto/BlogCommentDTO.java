@@ -1,5 +1,7 @@
 package com.tanjiaming99.model.dto;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -23,6 +25,10 @@ import java.time.LocalDateTime;
 @ApiModel(description = "博客评论请求参数")
 public class BlogCommentDTO implements Serializable {
     private static final long serialVersionUID = 1L;
+
+
+    @ApiModelProperty("主键id")
+    private Long commentId;
 
     @ApiModelProperty("关联的blog主键")
     @NotNull(message = "关联博文不能为空")
