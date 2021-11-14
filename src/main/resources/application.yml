@@ -39,3 +39,11 @@ mybatis-plus:
 
 server:
   port: 22222
+
+jwt:
+  # 存储的请求头
+  tokenHeader: Authorization
+  # 密钥
+  secret: yeb-secret
+  expiration: 604800
+  tokenHead: Bearer

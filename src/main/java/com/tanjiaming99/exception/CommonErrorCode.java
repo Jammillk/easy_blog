@@ -9,7 +9,9 @@ import lombok.Getter;
 @Getter
 public enum CommonErrorCode implements ErrorCode {
 
-    ERROR_KAPTCHA_CODE("CommonError-0001", "错误的校验码")
+    ERROR_KAPTCHA_CODE("CommonError-0001", "错误的校验码"),
+    ERROR_PASSWORD("CommonError-0002", "错误的密码"),
+    ERROR_AUTHORIZATION("CommonError-0003", "未授权（权限不足）")
     ;
 
     private String code;

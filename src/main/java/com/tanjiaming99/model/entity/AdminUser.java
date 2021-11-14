@@ -4,8 +4,12 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Collection;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * <p>
@@ -17,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @TableName("tb_admin_user")
 @ApiModel(value = "AdminUser对象", description = "")
-public class AdminUser implements Serializable {
+public class AdminUser implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
 
@@ -82,5 +86,40 @@ public class AdminUser implements Serializable {
             ", nickName=" + nickName +
             ", locked=" + locked +
         "}";
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 }

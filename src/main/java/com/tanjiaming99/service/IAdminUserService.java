@@ -3,6 +3,7 @@ package com.tanjiaming99.service;
 import com.tanjiaming99.model.dto.AdminUserDTO;
 import com.tanjiaming99.model.entity.AdminUser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.tanjiaming99.model.vo.LoginVO;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,6 +17,12 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface IAdminUserService extends IService<AdminUser> {
 
-    Boolean login(AdminUserDTO dto, HttpServletRequest request);
+    LoginVO login(AdminUserDTO dto, HttpServletRequest request);
 
+    /**
+     * 根据用户名获取用户
+     * @param username
+     * @return
+     */
+    AdminUser getAdminUserByUsername(String username);
 }
