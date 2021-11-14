@@ -25,6 +25,8 @@ spring:
         min-idle: 5       # 连接池中的最小空闲连接
     expire:
       second: 300
+  main:
+    allow-bean-definition-overriding: true
 
 #mybatis-plus配置
 mybatis-plus:
