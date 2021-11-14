@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+
 /**
  * <p>
  *
@@ -34,12 +37,14 @@ public class BlogComment implements Serializable {
     private String commentator;
 
     @ApiModelProperty("评论人的邮箱")
+    @NotBlank(message = "邮箱不能为空")
     private String email;
 
     @ApiModelProperty("网址")
     private String websiteUrl;
 
     @ApiModelProperty("评论内容")
+    @NotBlank(message = "评论内容不能为空")
     private String commentBody;
 
     @ApiModelProperty("评论提交时间")
