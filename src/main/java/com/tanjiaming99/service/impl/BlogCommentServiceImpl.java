@@ -2,7 +2,8 @@ package com.tanjiaming99.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.tanjiaming99.model.dto.BlogCommentDTO;
-import com.tanjiaming99.model.dto.BlogReplyDTO;
+import com.tanjiaming99.model.dto.CommentReplyDTO;
+import com.tanjiaming99.model.dto.CommentStatusDTO;
 import com.tanjiaming99.model.entity.BlogComment;
 import com.tanjiaming99.mapper.BlogCommentMapper;
 import com.tanjiaming99.service.IBlogCommentService;
@@ -39,10 +40,17 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
     }
 
     @Override
-    public Boolean replyComment(BlogReplyDTO dto) {
+    public Boolean replyComment(CommentReplyDTO dto) {
         return blogCommentMapper.update(null, new UpdateWrapper<BlogComment>()
                 .set("reply_body", dto.getReplyBody())
                 .set("reply_create_time", LocalDateTime.now().withNano(0))
+                .eq("comment_id", dto.getCommentId())) > 0;
+    }
+
+    @Override
+    public Boolean censorComment(CommentStatusDTO dto) {
+        return blogCommentMapper.update(null, new UpdateWrapper<BlogComment>()
+                .set("comment_status", dto.getCommentStatus())
                 .eq("comment_id", dto.getCommentId())) > 0;
     }
 }

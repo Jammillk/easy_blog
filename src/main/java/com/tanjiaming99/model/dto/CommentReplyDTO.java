@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @ToString
 @Data
 @ApiModel(description = "博客评论回复参数")
-public class BlogReplyDTO implements Serializable {
+public class CommentReplyDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("主键id")
@@ -30,5 +30,6 @@ public class BlogReplyDTO implements Serializable {
 
     @ApiModelProperty("回复内容")
     private String replyBody;
+
 
 }

@@ -3,14 +3,13 @@ package com.tanjiaming99.controller;
 
 import com.tanjiaming99.common.ajax.AjaxRes;
 import com.tanjiaming99.model.dto.BlogCommentDTO;
-import com.tanjiaming99.model.dto.BlogReplyDTO;
+import com.tanjiaming99.model.dto.CommentReplyDTO;
+import com.tanjiaming99.model.dto.CommentStatusDTO;
 import com.tanjiaming99.service.IBlogCommentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.stereotype.Controller;
 
 import javax.validation.Valid;
 
@@ -38,8 +37,14 @@ public class BlogCommentController {
 
     @ApiOperation(value = "回复一条评论")
     @PostMapping("/reply")
-    public AjaxRes<?> reply(@RequestBody @Valid BlogReplyDTO dto){
+    public AjaxRes<?> reply(@RequestBody @Valid CommentReplyDTO dto){
         return blogCommentService.replyComment(dto) ? AjaxRes.success("回复评论成功") : AjaxRes.fail("回复评论失败");
+    }
+
+    @ApiOperation(value = "修改评论状态")
+    @PostMapping("/censor")
+    public AjaxRes<?> censor(@RequestBody @Valid CommentStatusDTO dto){
+        return blogCommentService.censorComment(dto) ? AjaxRes.success("修改评论状态成功") : AjaxRes.fail("修改评论状态失败");
     }
 
 
