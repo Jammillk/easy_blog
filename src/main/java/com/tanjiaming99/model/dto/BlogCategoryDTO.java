@@ -1,5 +1,7 @@
 package com.tanjiaming99.model.dto;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -21,6 +23,10 @@ import java.io.Serializable;
 @Data
 @ApiModel(description = "博客分类请求参数")
 public class BlogCategoryDTO implements Serializable {
+
+    @ApiModelProperty("分类表主键")
+    private Integer categoryId;
+
     @ApiModelProperty("分类的名称")
     private String categoryName;
 

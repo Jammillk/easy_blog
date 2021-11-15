@@ -37,6 +37,12 @@ public class BlogCategoryController {
                 ? AjaxRes.success("新增分类成功") : AjaxRes.fail("新增分类失败");
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ApiOperation(value = "删除一个分类")
+    public AjaxRes<?> delete(@RequestBody BlogCategoryDTO dto){
+        return blogCategoryService.removeById(dto.getCategoryId())
+                ? AjaxRes.success("删除分类成功") : AjaxRes.fail("删除分类失败");
+    }
 
 
 }
