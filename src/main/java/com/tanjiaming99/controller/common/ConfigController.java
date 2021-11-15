@@ -1,4 +1,4 @@
-package com.tanjiaming99.controller;
+package com.tanjiaming99.controller.common;
 
 
 import com.tanjiaming99.common.ajax.AjaxRes;
@@ -29,7 +29,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/config")
-@Api(value = "配置管理模块", tags = "配置管理模块")
+@Api(value = "系统配置管理模块", tags = "系统配置管理模块")
 public class ConfigController {
     @Autowired
     private IConfigService configService;
