@@ -33,12 +33,6 @@ public class BlogController {
     @Autowired
     private IBlogService blogService;
 
-    @GetMapping("/hello")
-    @ApiModelProperty
-    public String hello() {
-        return "hello";
-    }
-
     @GetMapping("/{blogId}")
     @ApiOperation(value = "获取博客文章", notes = "根据id获取博客文章")
     public AjaxRes<Blog> getBlog(@PathVariable("blogId") Long blogId) {

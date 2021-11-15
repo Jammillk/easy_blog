@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/blog-tag")
-@Api(value = "博文标签管理", tags = "博文标签管理模块")
+@Api(value = "博文标签管理", tags = "标签管理模块")
 public class BlogTagController {
     @Autowired
     private IBlogTagService blogTagService;

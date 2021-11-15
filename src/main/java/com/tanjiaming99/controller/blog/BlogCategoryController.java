@@ -25,7 +25,7 @@ import org.springframework.stereotype.Controller;
  */
 @RestController
 @RequestMapping("/blog-category")
-@Api(value = "博客分类管理模块", tags = "博文分类管理模块")
+@Api(value = "博客分类管理模块", tags = "分类管理模块")
 public class BlogCategoryController {
     @Autowired
     private IBlogCategoryService blogCategoryService;
