@@ -6,8 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Value;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -27,6 +30,6 @@ public class CommentStatusDTO implements Serializable {
     private Long commentId;
 
     @ApiModelProperty("是否审核通过 0-未审核 1-审核通过")
-    @Size(min = 0, max = 1, message = "审核状态数值只能为0或1")
+    @Range(min = 0, max = 1, message = "审核状态数值只能为0或1")
     private Integer commentStatus;
 }

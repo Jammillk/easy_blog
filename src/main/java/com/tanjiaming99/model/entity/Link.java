@@ -1,13 +1,18 @@
 package com.tanjiaming99.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 /**
  * <p>
@@ -28,12 +33,15 @@ public class Link implements Serializable {
     private Integer linkId;
 
     @ApiModelProperty("友链类别 0-友链 1-推荐 2-个人网站")
+    @Range(min = 0, max = 2, message = "请根据文档定义选择友链类别")
     private Integer linkType;
 
     @ApiModelProperty("网站名称")
+    @NotBlank
     private String linkName;
 
     @ApiModelProperty("网站链接")
+    @URL(message = "请输入正确的网站链接")
     private String linkUrl;
 
     @ApiModelProperty("网站描述")
@@ -46,7 +54,8 @@ public class Link implements Serializable {
     @TableLogic
     private Integer isDeleted;
 
-    @ApiModelProperty("添加时间")
+    @ApiModelProperty(value = "添加时间")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     public Integer getLinkId() {
