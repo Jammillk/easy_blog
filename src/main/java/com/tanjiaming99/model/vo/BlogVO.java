@@ -31,9 +31,6 @@ public class BlogVO {
     @ApiModelProperty("博客分类(冗余字段)")
     private String blogCategoryName;
 
-    @ApiModelProperty("博客标签")
-    private String blogTags;
-
     @ApiModelProperty("阅读量")
     private Long blogViews;
 

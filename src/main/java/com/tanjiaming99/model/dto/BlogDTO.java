@@ -44,8 +44,6 @@ public class BlogDTO implements Serializable {
     @ApiModelProperty("博客分类(冗余字段)")
     private String blogCategoryName;
 
-    @ApiModelProperty("博客标签")
-    private String blogTags;
 
     @ApiModelProperty("0-草稿 1-发布")
     private Integer blogStatus;

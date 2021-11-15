@@ -47,9 +47,6 @@ public class Blog implements Serializable {
     @ApiModelProperty("博客分类(冗余字段)")
     private String blogCategoryName;
 
-    @ApiModelProperty("博客标签")
-    private String blogTags;
-
     @ApiModelProperty("0-草稿 1-发布")
     private Integer blogStatus;
 
@@ -120,13 +117,7 @@ public class Blog implements Serializable {
     public void setBlogCategoryName(String blogCategoryName) {
         this.blogCategoryName = blogCategoryName;
     }
-    public String getBlogTags() {
-        return blogTags;
-    }
 
-    public void setBlogTags(String blogTags) {
-        this.blogTags = blogTags;
-    }
     public Integer getBlogStatus() {
         return blogStatus;
     }
@@ -180,7 +171,6 @@ public class Blog implements Serializable {
             ", blogContent=" + blogContent +
             ", blogCategoryId=" + blogCategoryId +
             ", blogCategoryName=" + blogCategoryName +
-            ", blogTags=" + blogTags +
             ", blogStatus=" + blogStatus +
             ", blogViews=" + blogViews +
             ", enableComment=" + enableComment +
