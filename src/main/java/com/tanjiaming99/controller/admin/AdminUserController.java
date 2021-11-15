@@ -30,7 +30,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/admin")
-@Api(value = "后台用户操作相关接口")
+@Api(value = "后台用户操作相关接口", tags = "用户登录管理模块")
 public class AdminUserController {
     @Autowired
     private IAdminUserService adminUserService;
