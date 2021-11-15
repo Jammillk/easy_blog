@@ -22,7 +22,7 @@ import java.io.ByteArrayOutputStream;
  **/
 @Controller
 @Slf4j
-@Api(value = "验证码相关接口")
+@Api(value = "验证码相关接口", tags = "验证码管理模块")
 public class KaptchaController {
     @Autowired
     private DefaultKaptcha captchaProducer;

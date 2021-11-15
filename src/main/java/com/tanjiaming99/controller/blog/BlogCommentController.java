@@ -25,7 +25,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/blog-comment")
-@Api(value = "评论管理模块")
+@Api(value = "评论管理模块", tags = "博文评论管理模块")
 public class BlogCommentController {
 
     @Autowired

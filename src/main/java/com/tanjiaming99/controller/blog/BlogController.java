@@ -28,7 +28,7 @@ import javax.validation.Valid;
  */
 @RestController
 @RequestMapping("/blog")
-@Api(value = "博客文章相关的接口")
+@Api(value = "博客文章相关的接口", tags = "博客文章管理模块")
 public class BlogController {
     @Autowired
     private IBlogService blogService;
