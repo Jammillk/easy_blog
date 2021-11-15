@@ -50,11 +50,11 @@ public class Link implements Serializable {
     @ApiModelProperty("用于列表排序")
     private Integer linkRank;
 
-    @ApiModelProperty("是否删除 0-未删除 1-已删除")
+    @ApiModelProperty(value = "是否删除 0-未删除 1-已删除", hidden = true)
     @TableLogic
     private Integer isDeleted;
 
-    @ApiModelProperty(value = "添加时间")
+    @ApiModelProperty(value = "添加时间", hidden = true)
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 

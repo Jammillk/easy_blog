@@ -8,8 +8,7 @@ import com.tanjiaming99.model.dto.CommentReplyDTO;
 import com.tanjiaming99.model.dto.CommentStatusDTO;
 import com.tanjiaming99.model.entity.BlogComment;
 import com.tanjiaming99.service.IBlogCommentService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +32,7 @@ public class BlogCommentController {
 
     @ApiOperation(value = "新增一条评论")
     @RequestMapping(method = RequestMethod.POST)
-    public AjaxRes<?> create(@RequestBody @Valid CommentDTO dto) {
+    public AjaxRes<?> create(@RequestBody @Valid  CommentDTO dto) {
         return blogCommentService.createComment(dto) ? AjaxRes.success("新增评论成功") : AjaxRes.fail("新增评论失败");
     }
 
@@ -50,6 +49,9 @@ public class BlogCommentController {
     }
 
     @ApiOperation(value = "删除一条评论", notes = "只需传入commentId即可")
+    @ApiImplicitParams(
+            @ApiImplicitParam(name = "commentId", value = "评论id",paramType = "Long",required = true)
+    )
     @RequestMapping(method = RequestMethod.DELETE)
     public AjaxRes<?> remove(@RequestBody CommentDTO dto) {
         return blogCommentService.removeById(dto.getCommentId()) ? AjaxRes.success("删除评论成功") : AjaxRes.fail("删除评论失败");

@@ -32,11 +32,11 @@ public class Config implements Serializable {
     @ApiModelProperty("配置项的值")
     private String configValue;
 
-    @ApiModelProperty("创建时间")
+    @ApiModelProperty(value = "创建时间",hidden = true)
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
-    @ApiModelProperty("修改时间")
+    @ApiModelProperty(value = "修改时间", hidden = true)
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 

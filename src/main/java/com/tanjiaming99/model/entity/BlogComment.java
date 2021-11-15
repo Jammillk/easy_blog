@@ -47,7 +47,7 @@ public class BlogComment implements Serializable {
     @NotBlank(message = "评论内容不能为空")
     private String commentBody;
 
-    @ApiModelProperty("评论提交时间")
+    @ApiModelProperty(value = "评论提交时间", hidden = true)
     private LocalDateTime commentCreateTime;
 
 //    @ApiModelProperty("评论时的ip地址")
@@ -62,7 +62,7 @@ public class BlogComment implements Serializable {
     @ApiModelProperty("是否审核通过 0-未审核 1-审核通过")
     private Integer commentStatus;
 
-    @ApiModelProperty("是否删除 0-未删除 1-已删除")
+    @ApiModelProperty(value = "是否删除 0-未删除 1-已删除", hidden = true)
     @TableLogic
     private Integer isDeleted;
 

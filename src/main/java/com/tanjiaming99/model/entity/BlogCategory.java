@@ -35,11 +35,11 @@ public class BlogCategory implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     private Integer categoryRank;
 
-    @ApiModelProperty("是否删除 0=否 1=是")
+    @ApiModelProperty(value = "是否删除 0=否 1=是", hidden = true)
     @TableLogic
     private Integer isDeleted;
 
-    @ApiModelProperty("创建时间")
+    @ApiModelProperty(value = "创建时间", hidden = true)
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 

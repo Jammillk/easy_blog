@@ -33,7 +33,7 @@ public class BlogTagRelation implements Serializable {
     @ApiModelProperty("标签id")
     private Integer tagId;
 
-    @ApiModelProperty("添加时间")
+    @ApiModelProperty(value = "添加时间", hidden = true)
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 

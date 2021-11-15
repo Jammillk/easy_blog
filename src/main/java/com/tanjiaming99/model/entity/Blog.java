@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.NotBlank;
 
@@ -48,23 +49,24 @@ public class Blog implements Serializable {
     private String blogCategoryName;
 
     @ApiModelProperty("0-草稿 1-发布")
+    @Range(min = 0, max = 1, message = "博文状态为0-草稿 1-发布")
     private Integer blogStatus;
 
-    @ApiModelProperty("阅读量")
+    @ApiModelProperty(value = "阅读量", hidden = true)
     private Long blogViews;
 
     @ApiModelProperty("0-允许评论 1-不允许评论")
     private Integer enableComment;
 
-    @ApiModelProperty("是否删除 0=否 1=是")
+    @ApiModelProperty(value = "是否删除 0=否 1=是", hidden = true)
     @TableLogic
     private Integer isDeleted;
 
-    @ApiModelProperty("添加时间")
+    @ApiModelProperty(value = "添加时间", hidden = true)
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
-    @ApiModelProperty("修改时间")
+    @ApiModelProperty(value = "修改时间", hidden = true)
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
