@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @ToString
 @Data
 @ApiModel(description = "博客评论请求参数")
-public class BlogCommentDTO implements Serializable {
+public class CommentDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
 

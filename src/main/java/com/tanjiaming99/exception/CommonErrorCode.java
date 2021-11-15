@@ -4,14 +4,15 @@ import lombok.Getter;
 
 /**
  * @author llg
- * @description 
+ * @description
  */
 @Getter
 public enum CommonErrorCode implements ErrorCode {
 
     ERROR_KAPTCHA_CODE("CommonError-0001", "错误的校验码"),
     ERROR_PASSWORD("CommonError-0002", "错误的密码"),
-    ERROR_AUTHORIZATION("CommonError-0003", "未授权（权限不足）")
+    ERROR_AUTHORIZATION("CommonError-0003", "未授权（权限不足）"),
+    DUPLICATE_WRITE("CommonError-0004", "重复写入同一类参数")
     ;
 
     private String code;

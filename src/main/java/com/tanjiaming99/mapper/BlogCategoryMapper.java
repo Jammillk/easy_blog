@@ -1,7 +1,9 @@
 package com.tanjiaming99.mapper;
 
+import com.tanjiaming99.model.dto.BlogCategoryDTO;
 import com.tanjiaming99.model.entity.BlogCategory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface BlogCategoryMapper extends BaseMapper<BlogCategory> {
 
+    Boolean createCategory(@Param("dto") BlogCategoryDTO dto);
 }

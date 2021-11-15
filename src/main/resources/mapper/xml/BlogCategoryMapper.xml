@@ -2,4 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tanjiaming99.mapper.BlogCategoryMapper">
 
+    <insert id="createCategory">
+        insert into tb_blog_category (category_id, category_name, category_icon, category_rank, is_deleted, create_time)
+        values (#{dto.categoryName})
+    </insert>
 </mapper>

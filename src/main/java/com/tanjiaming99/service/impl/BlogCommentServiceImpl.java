@@ -1,7 +1,7 @@
 package com.tanjiaming99.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.tanjiaming99.model.dto.BlogCommentDTO;
+import com.tanjiaming99.model.dto.CommentDTO;
 import com.tanjiaming99.model.dto.CommentReplyDTO;
 import com.tanjiaming99.model.dto.CommentStatusDTO;
 import com.tanjiaming99.model.entity.BlogComment;
@@ -29,7 +29,7 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
     private BlogCommentMapper blogCommentMapper;
 
     @Override
-    public Boolean createComment(BlogCommentDTO dto) {
+    public Boolean createComment(CommentDTO dto) {
         // 校验码的校验，暂时先不做
         String kaptcha = dto.getKaptcha();
 

@@ -1,6 +1,6 @@
 package com.tanjiaming99.service;
 
-import com.tanjiaming99.model.dto.BlogCommentDTO;
+import com.tanjiaming99.model.dto.CommentDTO;
 import com.tanjiaming99.model.dto.CommentReplyDTO;
 import com.tanjiaming99.model.dto.CommentStatusDTO;
 import com.tanjiaming99.model.entity.BlogComment;
@@ -16,7 +16,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogCommentService extends IService<BlogComment> {
 
-    Boolean createComment(BlogCommentDTO dto);
+    Boolean createComment(CommentDTO dto);
 
     Boolean replyComment(CommentReplyDTO dto);
 

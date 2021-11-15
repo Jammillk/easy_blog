@@ -1,4 +1,4 @@
-package com.tanjiaming99.controller;
+package com.tanjiaming99.controller.common;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.tanjiaming99.config.KaptchaConfig;

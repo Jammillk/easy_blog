@@ -1,4 +1,4 @@
-package com.tanjiaming99.controller;
+package com.tanjiaming99.controller.blog;
 
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
