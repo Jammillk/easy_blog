@@ -1,8 +1,10 @@
 package com.tanjiaming99.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -20,6 +22,10 @@ public class Config implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @ApiModelProperty("主键id")
+    @TableId(value = "config_id", type = IdType.AUTO)
+    private Long configId;
+
     @ApiModelProperty("配置项的名称")
     private String configName;
 
@@ -27,10 +33,20 @@ public class Config implements Serializable {
     private String configValue;
 
     @ApiModelProperty("创建时间")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @ApiModelProperty("修改时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
+
+    public Long getConfigId() {
+        return configId;
+    }
+
+    public void setConfigId(Long configId) {
+        this.configId = configId;
+    }
 
     public String getConfigName() {
         return configName;
@@ -39,6 +55,7 @@ public class Config implements Serializable {
     public void setConfigName(String configName) {
         this.configName = configName;
     }
+
     public String getConfigValue() {
         return configValue;
     }
@@ -46,6 +63,7 @@ public class Config implements Serializable {
     public void setConfigValue(String configValue) {
         this.configValue = configValue;
     }
+
     public LocalDateTime getCreateTime() {
         return createTime;
     }
@@ -53,6 +71,7 @@ public class Config implements Serializable {
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
+
     public LocalDateTime getUpdateTime() {
         return updateTime;
     }
@@ -64,10 +83,11 @@ public class Config implements Serializable {
     @Override
     public String toString() {
         return "Config{" +
-            "configName=" + configName +
-            ", configValue=" + configValue +
-            ", createTime=" + createTime +
-            ", updateTime=" + updateTime +
-        "}";
+                "configId=" + configId +
+                ", configName='" + configName + '\'' +
+                ", configValue='" + configValue + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
     }
 }
