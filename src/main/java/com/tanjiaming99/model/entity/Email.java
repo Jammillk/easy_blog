@@ -29,4 +29,7 @@ public class Email {
     @ApiModelProperty("标题")
     private String subject;
 
+    @ApiModelProperty("邮件类型。0为")
+    private Integer mailType;
+
 }
