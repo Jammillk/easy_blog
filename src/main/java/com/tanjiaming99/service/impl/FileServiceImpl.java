@@ -1,6 +1,7 @@
 package com.tanjiaming99.service.impl;
 
-import com.tanjiaming99.service.IUploadService;
+import com.tanjiaming99.service.IFileService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,7 +16,7 @@ import java.io.IOException;
  * @Date 2021/11/16 13:36
  **/
 @Service
-public class UploadServiceImpl implements IUploadService {
+public class FileServiceImpl implements IFileService {
     @Override
     public void uploadFile(MultipartFile file) {
         String filePath = file.getOriginalFilename();
@@ -28,5 +29,10 @@ public class UploadServiceImpl implements IUploadService {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public ResponseEntity download() {
+        return null;
     }
 }
