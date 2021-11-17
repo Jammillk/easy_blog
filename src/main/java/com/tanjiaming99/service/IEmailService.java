@@ -9,4 +9,5 @@ import com.tanjiaming99.model.entity.Email;
 public interface IEmailService {
     Boolean sendEmail(Email email);
 
+
 }

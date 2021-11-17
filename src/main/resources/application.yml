@@ -36,10 +36,17 @@ spring:
     username: tanjiaming99@163.com
     password: YQNUCWYQSLPOFEPF
     default-encoding: utf-8
+  freemarker:
+    template-loader-path: classpath:templates/
+    suffix: .ftl
+    enabled: true
+mail:
+  fromMail:
+    addr: tanjiaming99@163.com
+    nickname: ゛魚生
+    author: ゛魚生
+    url: https://tanjiaming99.com
 
-#mail:
-#  fromMail:
-#    addr: tanjiaming99@163.com
 
 
 #mybatis-plus配置

@@ -17,6 +17,12 @@ import lombok.ToString;
 @ApiModel(description = "邮件服务相关参数")
 public class Email {
 
+    @ApiModelProperty("评论id")
+    private Long commentId;
+
+    @ApiModelProperty("博文id")
+    private Long blogId;
+
     @ApiModelProperty("发送者")
     private String from;
 
@@ -29,7 +35,7 @@ public class Email {
     @ApiModelProperty("标题")
     private String subject;
 
-    @ApiModelProperty("邮件类型。0为")
+    @ApiModelProperty("邮件类型。0为接收用户邮件，1为回复用户邮件")
     private Integer mailType;
 
 }
