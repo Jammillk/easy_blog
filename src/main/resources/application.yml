@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/easy_blog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: ENC(Z621/b1MsUeob7odZMPwD7qi2a2CNq71FTE37XB7xUjBKrkJp093yATUCXnfwaaI)
+    password: ENC(eC/C6Otmvz7qKuvB+wtML9MZg0zhmAeWHOzTf5sXsMjwpySpY6WaJ6E+s84A2d/k)
   # flyway数据库表管理
   flyway:
     # 如果启动的时候需要flyway管理sql脚本的话，将enabled设置为true
@@ -12,7 +12,7 @@ spring:
     baseline-on-migrate: true
     url: jdbc:mysql://localhost:3306/easy_blog?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     user: root
-    password: ENC(Z621/b1MsUeob7odZMPwD7qi2a2CNq71FTE37XB7xUjBKrkJp093yATUCXnfwaaI)
+    password: ENC(3tngKvoNrDpjuZX9U4YQfpqIo1GVfvUX0Z0NcAD5LMS/eUsUZRU6BL9tLHa9ofWm)
   redis:
     host: localhost
     port: 6379
@@ -34,7 +34,7 @@ spring:
   mail:
     host: smtp.163.com
     username: tanjiaming99@163.com
-    password: ENC(d1T2pOxTNXYvMPOdSVIcULTZfMdSmsyOcFI5lRVsU0+mLZ9YY+l9mrdv0Gov98BI9nH9nJAZ+zP1YD89Zi/JXw==)
+    password: ENC(dH6iSnJ3S7TbVEf2FGzydI7ByzmEEBKf3ujJfHjMcDaQ5rN5rF4S9PlvJwiSxilkSZL/vBJJ66j5XEwfe2M05w==)
     default-encoding: utf-8
   freemarker:
     template-loader-path: classpath:templates/
@@ -67,7 +67,7 @@ jwt:
   # 存储的请求头
   tokenHeader: Authorization
   # 密钥
-  secret: ENC(LtbUXaYdzUN5ekMrS5issPOMirygoz3BnUJ3kF1b+Ze/pRRlPa909FS1Wlj37cdT)
+  secret: ENC(HusGE3dR9pDMMBCjhMMA+PtieOw2799yb1SMBdBhqsW2g6NpLgDPdz+Vz58UzVJ3)
   # 7天过期
   expiration: 604800
   tokenHead: Bearer

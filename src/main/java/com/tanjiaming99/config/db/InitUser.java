@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.Objects;
 
 /**
  * @author tanjiaming99
@@ -24,6 +25,9 @@ public class InitUser {
      */
     @PostConstruct
     public void InsertInitUserToDB() {
+        if(Objects.isNull(adminUserService.getById(1))){
+            return ;
+        }
         AdminUser user = AdminUser.builder()
                 .adminUserId(1)
                 .loginUserName("root")
