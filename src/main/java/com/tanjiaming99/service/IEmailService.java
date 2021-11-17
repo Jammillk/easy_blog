@@ -1,5 +1,6 @@
 package com.tanjiaming99.service;
 
+import com.tanjiaming99.model.entity.BlogComment;
 import com.tanjiaming99.model.entity.Email;
 
 /**
@@ -9,5 +10,5 @@ import com.tanjiaming99.model.entity.Email;
 public interface IEmailService {
     Boolean sendEmail(Email email);
 
-
+    Boolean sendEmail(Email email, BlogComment comment);
 }

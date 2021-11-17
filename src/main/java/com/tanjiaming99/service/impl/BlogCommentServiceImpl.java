@@ -1,6 +1,7 @@
 package com.tanjiaming99.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.tanjiaming99.event.comment.NewCommentEvent;
 import com.tanjiaming99.model.dto.CommentDTO;
 import com.tanjiaming99.model.dto.CommentReplyDTO;
 import com.tanjiaming99.model.dto.CommentStatusDTO;
@@ -10,6 +11,7 @@ import com.tanjiaming99.service.IBlogCommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -28,6 +30,9 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
     @Autowired
     private BlogCommentMapper blogCommentMapper;
 
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
+
     @Override
     public Boolean createComment(CommentDTO dto) {
         // 校验码的校验，暂时先不做
@@ -36,6 +41,7 @@ public class BlogCommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogC
         // 复制参数。是否有点多余？
         BlogComment blogComment = new BlogComment();
         BeanUtils.copyProperties(dto, blogComment);
+        applicationEventPublisher.publishEvent(new NewCommentEvent(blogComment));
         return blogCommentMapper.insert(blogComment) > 0;
     }
 

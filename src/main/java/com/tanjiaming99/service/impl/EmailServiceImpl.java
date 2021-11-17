@@ -2,6 +2,7 @@ package com.tanjiaming99.service.impl;
 
 import cn.hutool.extra.template.TemplateEngine;
 import cn.hutool.extra.template.TemplateUtil;
+import com.tanjiaming99.model.entity.BlogComment;
 import com.tanjiaming99.model.entity.Email;
 import com.tanjiaming99.service.IEmailService;
 import com.tanjiaming99.utils.JsonUtil;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
@@ -51,8 +53,14 @@ public class EmailServiceImpl implements IEmailService {
     @Value("${mail.fromMail.addr}")
     private String blogAddressFrom;
 
+    @Async
     @Override
     public Boolean sendEmail(Email email) {
+       return sendEmail(email, null);
+    }
+
+    @Override
+    public Boolean sendEmail(Email email, BlogComment comment) {
         Boolean result = Boolean.TRUE;
         MimeMessage message = mailSender.createMimeMessage();
         try {
@@ -78,12 +86,11 @@ public class EmailServiceImpl implements IEmailService {
      * @param email 邮件内容
      * @return
      */
-    private String templateForText(Email email) {
+    private String templateForText(Email email ) {
         Map<String, String> bindingMap = Collections.emptyMap();
         Template template = null;
         try {
             Configuration configuration = freeMarkerConfigurer.getConfiguration();
-
             if (email.getMailType().equals(0)) {
                 bindingMap = emailParamService.noticeParam(email);
                 template = configuration.getTemplate(noticeTemplatePath);
