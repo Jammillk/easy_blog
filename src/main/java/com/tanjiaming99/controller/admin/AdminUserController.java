@@ -41,8 +41,15 @@ public class AdminUserController {
         return AjaxRes.success(adminUserService.login(dto, request));
     }
 
+    @PostMapping("/message")
+    @ApiOperation(value = "修改用户信息接口", notes = "改密码")
+    public AjaxRes<?> updateMessage(@RequestBody AdminUser adminUser) {
+        return adminUserService.updateMessage(adminUser) ? AjaxRes.success("修改成功") : AjaxRes.fail("修改失败");
+    }
+
     /**
      * 以后可能再修改用户对象，以保存更多的信息。
+     *
      * @param principal
      * @return
      */

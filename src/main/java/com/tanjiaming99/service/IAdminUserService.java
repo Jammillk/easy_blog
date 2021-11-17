@@ -25,4 +25,6 @@ public interface IAdminUserService extends IService<AdminUser> {
      * @return
      */
     AdminUser getAdminUserByUsername(String username);
+
+    Boolean updateMessage(AdminUser adminUser);
 }

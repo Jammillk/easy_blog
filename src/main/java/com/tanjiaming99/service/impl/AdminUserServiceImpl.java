@@ -96,4 +96,11 @@ public class AdminUserServiceImpl extends ServiceImpl<AdminUserMapper, AdminUser
         return adminUserMapper.selectOne(new QueryWrapper<AdminUser>()
                 .eq("login_user_name", username));
     }
+
+    @Override
+    public Boolean updateMessage(AdminUser adminUser) {
+        // spring security 可能还有一些操作？
+        // ......
+        return adminUserMapper.updateById(adminUser) > 0;
+    }
 }
