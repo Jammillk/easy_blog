@@ -1,4 +1,4 @@
-package com.tanjiaming99.config;
+package com.tanjiaming99.config.db;
 
 import lombok.extern.slf4j.Slf4j;
 import org.flywaydb.core.Flyway;

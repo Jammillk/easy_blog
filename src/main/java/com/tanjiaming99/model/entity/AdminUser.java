@@ -8,6 +8,7 @@ import java.util.Collection;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -19,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @author tanjiaming99
  * @since 2021-11-12 10:28:39
  */
+@Builder
 @TableName("tb_admin_user")
 @ApiModel(value = "AdminUser对象", description = "")
 public class AdminUser implements Serializable, UserDetails {
