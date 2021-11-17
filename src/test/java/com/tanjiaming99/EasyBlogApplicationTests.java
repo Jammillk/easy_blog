@@ -1,10 +1,18 @@
 package com.tanjiaming99;
 
+import org.jasypt.encryption.StringEncryptor;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-//@SpringBootTest
+@SpringBootTest
 class EasyBlogApplicationTests {
+    @Autowired
+    private StringEncryptor stringEncryptor;
+    @Test
+    public void testPassword(){
+        System.out.println(stringEncryptor.encrypt("test"));
+    }
 
     @Test
     void contextLoads() {
