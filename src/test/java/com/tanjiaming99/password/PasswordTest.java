@@ -21,5 +21,6 @@ public class PasswordTest {
     @Test
     public void testPassword(){
         System.out.println(stringEncryptor.encrypt("test"));
+        System.out.println(stringEncryptor.decrypt("Z621/b1MsUeob7odZMPwD7qi2a2CNq71FTE37XB7xUjBKrkJp093yATUCXnfwaaI"));
     }
 }

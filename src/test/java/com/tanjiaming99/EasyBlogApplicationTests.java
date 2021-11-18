@@ -11,7 +11,12 @@ class EasyBlogApplicationTests {
     private StringEncryptor stringEncryptor;
     @Test
     public void testPassword(){
-        System.out.println(stringEncryptor.encrypt("test"));
+        String message = "test";
+        System.out.println("明文：" + message);
+        String encrypt = stringEncryptor.encrypt("test");
+        System.out.println("密文：" + encrypt);
+        String decrypt = stringEncryptor.decrypt(encrypt);
+        System.out.println("解密：" + decrypt);
     }
 
     @Test

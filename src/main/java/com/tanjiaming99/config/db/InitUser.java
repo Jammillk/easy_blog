@@ -23,7 +23,7 @@ public class InitUser {
     /**
      * 初始用户
      */
-    @PostConstruct
+//    @PostConstruct
     public void InsertInitUserToDB() {
         if(Objects.isNull(adminUserService.getById(1))){
             return ;
